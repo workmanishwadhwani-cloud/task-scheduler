@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Task Scheduler</title>
+</head>
+<body>
+    <header>
+        <h1>🗓️ Task Scheduler</h1>
+    </header>
+    <main>
+        <div class="task-form">
+            <input type="text" id="task" placeholder="Enter task...">
+            <select id="priority">
+                <option value="top">Top Priority</option>
+                <option value="middle">Middle Priority</option>
+                <option value="low">Less Priority</option>
+            </select>
+            <input type="date" id="deadline">
+            <button id="add-task">Add Task</button>
+        </div>
+
+        <div class="algorithm-buttons">
+            <h2>Schedule Using:</h2>
+            <button onclick="schedulePriority()">Priority Based</button>
+            <button onclick="scheduleDeadline()">Deadline Based (EDF)</button>
+            <button onclick="scheduleProfit()">Priority + Deadline</button>
+            <button onclick="clearSchedule()">Clear Schedule</button>
+        </div>
+
+        <div class="task-list">
+            <h2>Task List</h2>
+            <div id="task-list">
+                <div class="empty-state">No tasks added yet. Add your first task!</div>
+            </div>
+        </div>
+
+        <div class="scheduled-order" id="scheduled-order" style="display: none;">
+            <h2>Scheduled Order</h2>
+            <div id="order-list"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
